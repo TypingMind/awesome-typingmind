@@ -8,7 +8,8 @@ A collection of useful resources for TypingMind
 
 List of cool [TypingMind plugins](https://docs.typingmind.com/plugins). See also the [Plugin Shuffler](https://www.typingplugins.xyz/).
 
-- [Plugin examples](https://docs.typingmind.com/plugins/plugins-examples) hosted by TypingMind
+- [Standard Plugins](https://github.com/orgs/TypingMind/repositories?q=plugin) provided by TypingMind
+- [Plugin Examples](https://docs.typingmind.com/plugins/plugins-examples) hosted by TypingMind
   - Readwise Highlights Retriever - by shabegom
   - Browser get innerText - by asad
   - Code Execution - by hermanzdosilovic
