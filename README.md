@@ -20,7 +20,7 @@ List of cool [TypingMind plugins](https://docs.typingmind.com/plugins). See also
   - DiffusionPlus, TubePlus, SEOPlus, BrowsePlus, ChartsPlus, SearchPlus, Midjourney Expert, Wikipedia, GitHub User Profile, CoinGecko
 - [Forrest Technologies](https://plugins.forresttechnologies.com/) - free and premium
   - Enhanced Reasoning Tool, Vectara Query Plugin. Discord Message Sender, CSV Generator With Download, Fal Video Generator
-
+- [Memory Plugin](https://www.memoryplugin.com/) - premium
 
 ## Extensions
 
