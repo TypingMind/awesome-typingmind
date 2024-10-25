@@ -2,7 +2,7 @@
 
 A collection of useful resources for TypingMind
 
-![Made for TypingMind](made_for_typingmind.png)
+<img src="logos/made_for_typingmind.png" title="Made for TypingMind" width="300">
 
 ## Plugins
 
