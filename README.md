@@ -29,6 +29,7 @@ List of cool [TypingMind plugins](https://docs.typingmind.com/plugins).
   - Draw PlantUML diagram - by TeMPOraL
   - Find something to do - by TeMPOraL
   - Password Generator - by underestimated
+  - [Document Generator](https://cloud.typingmind.com/plugins/p-01JC4MFPZ80KPJ2G0VDQ7Y1SND) - by khoit12
 - [talktweak](https://www.talktweak.com/) - free and premium
   - DiffusionPlus, TubePlus, SEOPlus, BrowsePlus, ChartsPlus, SearchPlus, Midjourney Expert, Wikipedia, GitHub User Profile, CoinGecko
 - [Forrest Technologies](https://plugins.forresttechnologies.com/) - free and premium
