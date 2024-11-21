@@ -34,7 +34,14 @@ List of cool [TypingMind plugins](https://docs.typingmind.com/plugins).
 - [Forrest Technologies](https://plugins.forresttechnologies.com/) - free and premium
   - Enhanced Reasoning Tool, Vectara Query Plugin. Discord Message Sender, CSV Generator With Download, Fal Video Generator
 - [Memory Plugin](https://www.memoryplugin.com/) - premium
-- [Plugins shared on TypingMind Discord](https://discord.com/channels/1087527241505853520/1120236521732182056) - free
+- [Plugins shared on TypingMind Discord](https://discord.com/channels/1087527241505853520/1120236521732182056) or [showcase](https://discord.com/channels/1087527241505853520/1140505087148568576) - free
   - [Document Generator](https://cloud.typingmind.com/plugins/p-01JC4MFPZ80KPJ2G0VDQ7Y1SND) - by khoit12
   - [Todoist Integration](https://cloud.typingmind.com/plugins/p-01JC4TCVZYNTY6BB39XBKY8JTC) - by occred
-  - [Perplexity Search](https://cloud.typingmind.com/plugins/p-01JC9HXPV708RY6B68RY6CAWW1)
+  - [Perplexity Search](https://cloud.typingmind.com/plugins/p-01JC9HXPV708RY6B68RY6CAWW1) - by khoit12
+  - [Get Weather](https://cloud.typingmind.com/plugins/p-01JBYQ5W1WHD7GSRHZK9KC4JTW) - by khoit12
+  - [WolframAlpha Query](https://cloud.typingmind.com/plugins/p-01JBZQ6VTK3XNV65DXGKYYFXJ9) - by occred
+  - [Obsidian Omnisearch Integration](https://cloud.typingmind.com/plugins/p-01JBQCW0G2VQSFJN5FB08F4FHA) - by occred
+  - [Presentation Generator](https://cloud.typingmind.com/plugins/p-01JCBPXPFC2KN4WC9W8JTG1J97) - by khoit12
+  - [Open Library Book Search](https://cloud.typingmind.com/plugins/p-01JBP40A4J7ZBZPFYZT17B0WY1) - by khoit12
+  - [Grok Image Generation](https://cloud.typingmind.com/plugins/p-01JD02YSJ4RMYSMY2X2JRC21TN) - by mcarcaso
+  
