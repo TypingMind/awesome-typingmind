@@ -1,7 +1,7 @@
 # :fire::fire: Revamped ChatGPT Style Theme :fire::fire:
 
 ### I completely revamped the TypingMind interface with an extension that introduces a suite of enhancements and features to make it resemble ChatGPT more closely.
-
+To install you can use extension link https://cdn.jsdelivr.net/gh/shaggy2626/awesome-typingmind/themes/gpt-style-theme/gpt_style_theme.js
 ---
 
 ## Key Highlights
