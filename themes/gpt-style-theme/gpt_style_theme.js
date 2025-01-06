@@ -31,6 +31,13 @@
         background-color: #F9F9F9 !important;
       }
   
+      /* Workspace icon hover effects */
+      [data-element-id="workspace-bar"] button span.hover\\:bg-white\\/20:hover,
+      [data-element-id="workspace-bar"] button:hover span.text-white\\/70,
+      [data-element-id="workspace-profile-button"]:hover {
+        background-color: rgba(0, 0, 0, 0.1) !important;
+      }
+  
       /* -----------------------------------------------
          2) New Chat Button: #E3E3E3 background, black text
          ----------------------------------------------- */
