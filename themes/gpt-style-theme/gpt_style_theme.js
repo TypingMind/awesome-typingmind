@@ -1,25 +1,27 @@
-/**************************************************************
+/****************************************************************************
  * typingmind-custom-with-sidebar.js
  *
- * Multi-step parse approach:
+ * Multi-step parse approach for user messages:
  *  - <test>...</test> => entire inside bold (with code blocks inside)
  *  - triple backticks => <pre> with rounded corners
  *  - single backticks => bold
  *  - single quotes => bold
  *  - other tags remain literal
- *  - uses data-processed to avoid infinite re-styling loops
- **************************************************************/
-
-/**************************************************************
- * A) SIDEBAR MODIFICATIONS
- **************************************************************/
-(function () {
-    if (document.getElementById('typingmindSidebarFixMerged')) return;
-  
+ * 
+ * Also includes:
+ *  - Sidebar UI color/style overrides
+ *  - Main chat area overrides
+ *  - Input area styling customization
+ ****************************************************************************/
+(function() {
+  /**************************************************************
+   * A) SIDEBAR MODIFICATIONS
+   **************************************************************/
+  if (!document.getElementById('typingmindSidebarFixMerged')) {
     const sidebarStyle = document.createElement('style');
     sidebarStyle.id = 'typingmindSidebarFixMerged';
     sidebarStyle.type = 'text/css';
-  
+
     sidebarStyle.innerHTML = `
       /* -----------------------------------------------
          1) Light BG for main sidebar containers
@@ -30,14 +32,7 @@
       [data-element-id="sidebar-middle-part"] {
         background-color: #F9F9F9 !important;
       }
-  
-      /* Workspace icon hover effects */
-      [data-element-id="workspace-bar"] button span.hover\\:bg-white\\/20:hover,
-      [data-element-id="workspace-bar"] button:hover span.text-white\\/70,
-      [data-element-id="workspace-profile-button"]:hover {
-        background-color: rgba(0, 0, 0, 0.1) !important;
-      }
-  
+
       /* -----------------------------------------------
          2) New Chat Button: #E3E3E3 background, black text
          ----------------------------------------------- */
@@ -48,7 +43,7 @@
       [data-element-id="new-chat-button-in-side-bar"] * {
         color: #000 !important;
       }
-  
+
       /* -----------------------------------------------
          3) Search bar: white BG, black text,
             black placeholder, subtle border
@@ -78,7 +73,7 @@
         color: rgba(0, 0, 0, 0.6) !important;
         opacity: 1 !important;
       }
-  
+
       /* -----------------------------------------------
          4) Force black text for conversation items
          ----------------------------------------------- */
@@ -94,7 +89,7 @@
         opacity: 1 !important;
         --tw-text-opacity: 1 !important;
       }
-  
+
       /* -----------------------------------------------
          5) Hover highlight for custom chat items
          and "selected" chat item
@@ -105,7 +100,7 @@
       [data-element-id="selected-chat-item"] {
         background-color: #E3E3E3 !important;
       }
-  
+
       /* -----------------------------------------------
          6) 3-dot menu & trash icon: hide by default,
             show on hover, keep menu visible when open
@@ -145,7 +140,7 @@
         visibility: visible !important;
         pointer-events: auto !important;
       }
-  
+
       /* -----------------------------------------------
          7) "Filter by tags" popup color fix
          ----------------------------------------------- */
@@ -209,7 +204,7 @@
         scrollbar-width: thin !important;
         scrollbar-color: #c1c1c1 #f1f1f1 !important;
       }
-  
+
       /* -----------------------------------------------
          8) Text editing areas
          ----------------------------------------------- */
@@ -230,19 +225,28 @@
         border-color: #2563eb !important;
         box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2) !important;
       }
+
+      /* -----------------------------------------------
+         9) Workspace icon hover effects
+         ----------------------------------------------- */
+      [data-element-id="workspace-bar"] button span.hover\\:bg-white\\/20:hover,
+      [data-element-id="workspace-bar"] button:hover span.text-white\\/70,
+      [data-element-id="workspace-profile-button"]:hover {
+        background-color: rgba(0, 0, 0, 0.1) !important;
+      }
     `;
-  
+
     document.head.appendChild(sidebarStyle);
-  
-    // Monitor for re-apply
+
+    // Monitor for re-apply if <style> is removed
     const obs = new MutationObserver(() => {
       if (!document.getElementById('typingmindSidebarFixMerged')) {
         document.head.appendChild(sidebarStyle);
       }
     });
     obs.observe(document.body, { childList: true, subtree: true });
-  
-    // Fix placeholder if missing
+
+    // Ensure the sidebar search input has a placeholder
     function fixSearchPlaceholder() {
       const searchInput = document.querySelector('[data-element-id="search-chats-bar"]');
       if (searchInput && !searchInput.placeholder) {
@@ -251,10 +255,10 @@
     }
     document.addEventListener('DOMContentLoaded', fixSearchPlaceholder);
     fixSearchPlaceholder();
-  
+
     console.log("TypingMind Sidebar Mods loaded.");
-  })();
-  
+  }
+
   /***********************************************************
    * B) Main Chat Customization
    ***********************************************************/
@@ -264,7 +268,8 @@
     USER_MESSAGE_BLOCK: 'div[data-element-id="user-message"]',
     CHAT_SPACE: '[data-element-id="chat-space-middle-part"]'
   };
-  
+
+  // Main chat styling
   const mainStyleEl = document.createElement('style');
   mainStyleEl.textContent = `
     /************************************************
@@ -282,11 +287,11 @@
                    "Segoe UI", Helvetica, "Apple Color Emoji",
                    Arial, sans-serif, "Segoe UI Emoji",
                    "Segoe UI Symbol" !important;
-      font-size: 16px !important;
-      line-height: 24px !important;
+      font-size: 14px !important;
+      line-height: 28px !important;
       color: rgb(13, 13, 13) !important;
     }
-  
+
     /* .prose and user-message root styling, except certain classes */
     [data-element-id="chat-space-middle-part"] .prose.max-w-full,
     [data-element-id="chat-space-middle-part"] [data-element-id="user-message"] {
@@ -294,25 +299,25 @@
                    "Segoe UI", Helvetica, "Apple Color Emoji",
                    Arial, sans-serif, "Segoe UI Emoji",
                    "Segoe UI Symbol" !important;
-      font-size: 16px !important;
-      line-height: 24px !important;
+      font-size: 14px !important;
+      line-height: 28px !important;
       color: rgb(13, 13, 13) !important;
     }
-  
+
     [data-element-id="chat-space-middle-part"] .text-xs.text-gray-500.truncate,
     [data-element-id="chat-space-middle-part"] .italic.truncate.hover\\:underline {
       font-size: unset !important;
       line-height: unset !important;
       font-family: unset !important;
     }
-  
+
     [data-element-id="chat-space-middle-part"] .flex.items-start.justify-center.flex-col.gap-2 {
       font-size: unset !important;
       line-height: unset !important;
       font-family: unset !important;
       color: unset !important;
     }
-  
+
     /************************************************
      * 2. Hide user avatar + right-align user bubble
      ************************************************/
@@ -326,7 +331,7 @@
       max-width: 70% !important;
       border-radius: 1.5rem !important;
     }
-  
+
     /************************************************
      * 3. Code blocks: #F9F9F9 background, 
      *    slim border, round corners
@@ -336,7 +341,7 @@
       border: 1px solid #ccc !important;
       border-radius: 0.5rem !important; /* Round corners */
     }
-  
+
     [data-element-id="chat-space-middle-part"] pre.mb-2.overflow-auto.text-sm.border.border-gray-200.rounded.bg-gray-100 {
       background-color: #000 !important;
       color: #fff !important;
@@ -347,11 +352,11 @@
       word-wrap: break-word !important;
       overflow-x: hidden !important;
     }
-  
+
     [data-element-id="chat-space-middle-part"] pre > div.relative {
       position: relative !important;
     }
-  
+
     [data-element-id="chat-space-middle-part"] pre > div.relative > div.sticky {
       position: sticky !important;
       top: 0 !important;
@@ -360,26 +365,127 @@
       border-radius: 0.5rem 0.5rem 0 0 !important; /* Round top corners */
       border-bottom: 1px solid #ccc !important;
     }
-  
+
     [data-element-id="chat-space-middle-part"] pre > div.relative > div > pre {
       border: none !important;
       background: transparent !important;
       margin: 0 !important;
     }
-  
+
     /************************************************
      * 4. Remove hover background on conversation area
      ************************************************/
     [data-element-id="chat-space-middle-part"] [data-element-id="response-block"]:hover {
       background-color: transparent !important;
     }
+
+    /************************************************
+     * 5. Bullet points & numbered lists
+     ************************************************/
+    [data-element-id="chat-space-middle-part"] .prose.max-w-full ul,
+    [data-element-id="chat-space-middle-part"] .prose.max-w-full ol {
+      margin-top: 0.5rem !important;
+      margin-bottom: 0.5rem !important;
+    }
+    [data-element-id="chat-space-middle-part"] .prose.max-w-full li {
+      margin-top: 0.3rem !important;
+      margin-bottom: 0.3rem !important;
+    }
+    [data-element-id="chat-space-middle-part"] .prose.max-w-full li::marker {
+      color: rgb(13, 13, 13) !important;
+      font-weight: bold !important;
+    }
+    [data-element-id="chat-space-middle-part"] .prose.max-w-full ul > li {
+      list-style-type: disc !important;
+      padding-left: 0.5rem !important;
+    }
+    [data-element-id="chat-space-middle-part"] .prose.max-w-full ol > li {
+      list-style-type: decimal !important;
+      padding-left: 0.5rem !important;
+    }
   `;
   document.head.appendChild(mainStyleEl);
-  
+
+  // Input bar styling
+  const inputStyleEl = document.createElement('style');
+  inputStyleEl.textContent = `
+    /* Input container styling */
+    [data-element-id="chat-space-end-part"] [role="presentation"] {
+      background-color: #f4f4f4 !important;
+      border-radius: 1.5rem !important;
+      margin-bottom: 1rem !important;
+    }
+
+    /* Textarea styling */
+    #chat-input-textbox {
+      font-family: ui-sans-serif, -apple-system, system-ui, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol" !important;
+      font-size: 16px !important;
+      line-height: 24px !important;
+      min-height: 44px !important;
+      padding: 0.75rem 1rem !important;
+      border-radius: 1.5rem !important;
+      color: rgb(13, 13, 13) !important;
+      border: 0 solid rgb(227, 227, 227) !important;
+      outline: 0 solid rgba(0, 0, 0, 0) !important;
+      outline-offset: 2px !important;
+      margin: 8px 0 !important;
+      overflow-wrap: break-word !important;
+      tab-size: 4 !important;
+      text-size-adjust: 100% !important;
+      white-space-collapse: break-spaces !important;
+      font-variant-ligatures: none !important;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+    }
+
+    #chat-input-textbox::placeholder {
+      color: rgb(142, 142, 142) !important;
+      opacity: 1 !important;
+    }
+
+    /* Action buttons styling (excluding send and more-options) */
+    [data-element-id="chat-input-actions"] button:not([data-element-id="send-button"]):not([data-element-id="more-options-button"]) {
+      transition: all 0.2s ease !important;
+      color: rgb(13, 13, 13) !important;
+    }
+    [data-element-id="chat-input-actions"] button:not([data-element-id="send-button"]):not([data-element-id="more-options-button"]) svg {
+      width: 20px !important;
+      height: 20px !important;
+      vertical-align: middle !important;
+    }
+    [data-element-id="chat-input-actions"] button:not([data-element-id="send-button"]):not([data-element-id="more-options-button"]):hover {
+      background-color: rgba(0, 0, 0, 0.1) !important;
+      border-radius: 0.5rem !important;
+    }
+
+    /* Bottom actions container spacing */
+    [data-element-id="chat-input-actions"] {
+      padding: 0.5rem 0.75rem !important;
+    }
+
+    /* Send and More Options buttons styling */
+    [data-element-id="send-button"] {
+      background-color: rgb(13, 13, 13) !important;
+      border-color: rgb(13, 13, 13) !important;
+    }
+    [data-element-id="send-button"]:hover {
+      background-color: rgba(13, 13, 13, 0.8) !important;
+      border-color: rgba(13, 13, 13, 0.8) !important;
+    }
+    [data-element-id="more-options-button"] {
+      background-color: rgb(13, 13, 13) !important;
+      border-color: rgb(13, 13, 13) !important;
+    }
+    [data-element-id="more-options-button"]:hover {
+      background-color: rgba(13, 13, 13, 0.8) !important;
+      border-color: rgba(13, 13, 13, 0.8) !important;
+    }
+  `;
+  document.head.appendChild(inputStyleEl);
+
   /***********************************************************
    * F) JS logic for user messages, code blocks, etc.
    ***********************************************************/
-  
+
   /** Escapes < > ' " & so tags remain literal. */
   function escapeHtml(str) {
     return str
@@ -389,7 +495,7 @@
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#039;');
   }
-  
+
   /**
    * multiStepParse:
    *  - Triple backticks => <pre> (rounded corners)
@@ -398,38 +504,52 @@
    */
   function multiStepParse(escapedText) {
     let result = escapedText;
-  
+
     // (1) Triple backticks => <pre>
     const tripleRegex = /```\s*([\s\S]*?)\s*```/g;
     result = result.replace(tripleRegex, (match, code) => {
-      // Round corners, slim border
-      return `<pre style="background:#F9F9F9; border:1px solid #ccc; padding:6px; border-radius:0.5rem; white-space:pre-wrap;">${code}</pre>`;
+      return `<pre style="
+        background:#F9F9F9; 
+        border:1px solid #ccc; 
+        padding:6px; 
+        border-radius:0.5rem; 
+        overflow-x: auto;
+        margin: 0;
+      "><code style="
+        font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; 
+        font-size: 13px; 
+        line-height: 20px;
+        white-space: pre;
+        display: block;
+        overflow-wrap: normal;
+        word-break: normal;
+      ">${code}</code></pre>`;
     });
-  
+
     // (2) Single backticks => bold
     const singleBacktickRegex = /`([^`]+)`/g;
-    result = result.replace(singleBacktickRegex, (m, inlineCode) => {
+    result = result.replace(singleBacktickRegex, (_, inlineCode) => {
       return `<span style="font-weight:bold;">${inlineCode}</span>`;
     });
-  
+
     // (3) Single quotes => bold
     const singleQuoteRegex = /&#039;([^&#]+)&#039;/g;
     result = result.replace(singleQuoteRegex, (match, contentInside) => {
       return `<span style="font-weight:bold;">${contentInside}</span>`;
     });
-  
+
     return result;
   }
-  
+
   /**
    * styleUserMessageEl():
    *  Actually styles a single user message element, 
    *  sets data-processed so we don't re-do it in an infinite loop
    */
   function styleUserMessageEl(msgEl) {
-    // Mark as processed immediately to avoid loops
+    // Mark as processed to avoid repeated styling
     msgEl.setAttribute('data-processed', 'true');
-  
+
     // Light gray bubble
     Object.assign(msgEl.style, {
       backgroundColor: '#F4F4F4',
@@ -439,14 +559,14 @@
       marginBottom: '8px',
       display: 'block'
     });
-  
+
     const rawText = msgEl.textContent || '';
-    // No interesting patterns => skip
+    // Only parse if we have some < or backtick or single-quote
     if (!rawText.match(/[<`']/)) return;
-  
+
     // Escape everything
     let safe = escapeHtml(rawText);
-  
+
     // Extract <test> blocks
     const testMarkers = [];
     const testRegex = /(&lt;test&gt;)([\s\S]*?)(&lt;\/test&gt;)/g;
@@ -455,18 +575,18 @@
       testMarkers.push({ placeholder, openTag, inner, closeTag });
       return placeholder;
     });
-  
+
     // Parse triple backticks, single backticks, single quotes outside <test>
     extracted = multiStepParse(extracted);
-  
+
     // Re-inject <test> blocks
     testMarkers.forEach((tm) => {
       const parsedInner = multiStepParse(tm.inner);
       const replaced = `${tm.openTag}<span style="font-weight:bold;">${parsedInner}</span>${tm.closeTag}`;
       extracted = extracted.replace(tm.placeholder, replaced);
     });
-  
-    // Put final HTML inside
+
+    // Insert final HTML
     const container = msgEl.querySelector('div');
     if (container) {
       container.innerHTML = extracted;
@@ -474,7 +594,7 @@
       msgEl.innerHTML = `<div>${extracted}</div>`;
     }
   }
-  
+
   /**
    * styleUserMessages():
    *  applies styleUserMessageEl to all user messages
@@ -486,11 +606,11 @@
       // skip if in editing mode or already processed
       if (msgEl.closest('.editing')) return;
       if (msgEl.hasAttribute('data-processed')) return;
-  
+
       styleUserMessageEl(msgEl);
     });
   }
-  
+
   /**
    * handleJsonCodeBlocks():
    *  if <code> includes "code", parse JSON
@@ -499,7 +619,7 @@
     const codeEls = document.querySelectorAll(SELECTORS.CODE_BLOCKS);
     codeEls.forEach(codeEl => {
       if (codeEl.closest('.editing')) return;
-  
+
       if (codeEl.textContent.includes('"code"')) {
         try {
           const jsonContent = JSON.parse(codeEl.textContent);
@@ -507,12 +627,12 @@
           cleanCode = cleanCode.replace(/\\n/g, '\n');
           cleanCode = cleanCode.replace(/^"|"$/g, '');
           codeEl.textContent = cleanCode;
-  
+
           Object.assign(codeEl.style, {
             whiteSpace: 'pre-wrap',
             wordWrap: 'break-word'
           });
-  
+
           const preEl = codeEl.closest('pre');
           if (preEl) {
             Object.assign(preEl.style, {
@@ -526,7 +646,7 @@
       }
     });
   }
-  
+
   /**
    * styleSandboxOutputs():
    *  If text includes SANDBOX_ID or STANDARD_OUTPUT, style them
@@ -535,7 +655,7 @@
     const preEls = document.querySelectorAll(SELECTORS.RESULT_BLOCKS);
     preEls.forEach(preEl => {
       if (preEl.closest('.editing')) return;
-  
+
       if (preEl.textContent.includes('SANDBOX_ID') || preEl.textContent.includes('STANDARD_OUTPUT')) {
         Object.assign(preEl.style, {
           whiteSpace: 'pre-wrap',
@@ -553,7 +673,7 @@
       }
     });
   }
-  
+
   /**
    * improveTextDisplay():
    *  main function to style user messages + other code blocks
@@ -563,12 +683,12 @@
     handleJsonCodeBlocks();
     styleSandboxOutputs();
   }
-  
+
   /***********************************************************
    * G) Observe DOM Changes
    ***********************************************************/
   document.addEventListener('DOMContentLoaded', improveTextDisplay);
-  
+
   const observer = new MutationObserver((mutations) => {
     let reapply = false;
     for (const mutation of mutations) {
@@ -596,5 +716,7 @@
     attributes: true,
     characterData: true
   });
-  
-  console.log("typingmind-custom-with-sidebar.js: Loaded!");
+
+  console.log("typingmind-custom-with-sidebar.js: Loaded.");
+
+})();
