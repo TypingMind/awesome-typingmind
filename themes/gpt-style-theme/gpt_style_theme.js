@@ -280,7 +280,8 @@
       pre, pre *, code, code *,
       .flex.items-start.justify-center.flex-col.gap-2 *,
       .text-xs.text-gray-500.truncate,
-      .italic.truncate.hover\\:underline
+      .italic.truncate.hover\\:underline,
+      h1, h2, h3, h4, h5, h6
     ),
     [data-element-id="chat-space-middle-part"] [data-element-id="user-message"] > div {
       font-family: ui-sans-serif, -apple-system, system-ui,
@@ -402,6 +403,28 @@
     [data-element-id="chat-space-middle-part"] .prose.max-w-full ol > li {
       list-style-type: decimal !important;
       padding-left: 0.5rem !important;
+    }
+
+    /* Header styling */
+    [data-element-id="chat-space-middle-part"] .prose.max-w-full h1 {
+      font-size: 2em !important;
+      line-height: 1.3 !important;
+      margin-top: 0.5em !important;
+      margin-bottom: 0.5em !important;
+    }
+
+    [data-element-id="chat-space-middle-part"] .prose.max-w-full h2 {
+      font-size: 1.5em !important;
+      line-height: 1.3 !important;
+      margin-top: 0.5em !important;
+      margin-bottom: 0.5em !important;
+    }
+
+    [data-element-id="chat-space-middle-part"] .prose.max-w-full h3 {
+      font-size: 1.25em !important;
+      line-height: 1.3 !important;
+      margin-top: 0.5em !important;
+      margin-bottom: 0.5em !important;
     }
   `;
   document.head.appendChild(mainStyleEl);
