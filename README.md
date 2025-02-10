@@ -70,3 +70,4 @@ List of cool [TypingMind plugins](https://docs.typingmind.com/plugins).
   - [Todoist Integration](https://cloud.typingmind.com/plugins/p-01JC4TCVZYNTY6BB39XBKY8JTC) - by occred
   - [WolframAlpha Query](https://cloud.typingmind.com/plugins/p-01JBZQ6VTK3XNV65DXGKYYFXJ9) - by occred
   - [Yijing Reader](https://cloud.typingmind.com/plugins/p-01JKR38SJK3JH8MPTJYJSMDXJS) - by khoit12
+- khoit12's Plugin server: [https://github.com/Btran1291/TypingMind-Plugin-Server](https://github.com/Btran1291/TypingMind-Plugin-Server)
