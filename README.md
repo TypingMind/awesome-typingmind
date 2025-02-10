@@ -20,6 +20,14 @@ List of open-source useful [TypingMind extensions](https://docs.typingmind.com/t
 
 List of cool [TypingMind plugins](https://docs.typingmind.com/plugins).
 
+> [!TIP]
+> **TIP**: You are encouraged to host your plugins using a GitHub repository. All TypingMind's built-in plugins are open-source and maintained in their own separate repos at https://github.com/orgs/TypingMind/repositories
+> 
+> Creating a repo for your plugin will make it easier to upgrade your plugin without creating a unique cloud share every time. Users can also import your plugins using the GitHub link directly.
+> 
+> Learn how to host your plugin in a GitHub repo in the correct format that can be imported by TypingMind: https://docs.typingmind.com/plugins/share-import-plugins
+
+
 - [Standard Plugins](https://github.com/orgs/TypingMind/repositories?q=plugin) provided by TypingMind
 - [Plugin Examples](https://docs.typingmind.com/plugins/plugins-examples) hosted by TypingMind
   - Readwise Highlights Retriever - by shabegom
