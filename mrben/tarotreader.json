@@ -1,0 +1,68 @@
+{
+    "id": "tarot_reading",
+    "code": "function getShuffledDeck() {\n  const deck = Array.from({ length: 78 }, (_, i) => ({\n    number: i + 1,\n    reversedProbability: Math.random() * 0.5\n  }));\n\n  for (let i = deck.length - 1; i > 0; i--) {\n    const j = Math.floor(Math.random() * (i + 1));\n    [deck[i], deck[j]] = [deck[j], deck[i]];\n  }\n\n  return deck;\n}\n\nfunction getCard(cardNumber, reversedProbability, include_reversed) {\n  const majorArcana = [\n    { name: \"The Fool\" }, { name: \"The Magician\" }, { name: \"The High Priestess\" },\n    { name: \"The Empress\" }, { name: \"The Emperor\" }, { name: \"The Hierophant\" },\n    { name: \"The Lovers\" }, { name: \"The Chariot\" }, { name: \"Strength\" },\n    { name: \"The Hermit\" }, { name: \"Wheel of Fortune\" }, { name: \"Justice\" },\n    { name: \"The Hanged Man\" }, { name: \"Death\" }, { name: \"Temperance\" },\n    { name: \"The Devil\" }, { name: \"The Tower\" }, { name: \"The Star\" },\n    { name: \"The Moon\" }, { name: \"The Sun\" }, { name: \"Judgement\" },\n    { name: \"The World\" }\n  ];\n\n  const minorArcana = [\n    { suit: \"Wands\", number: \"Ace\" }, { suit: \"Wands\", number: \"Two\" }, { suit: \"Wands\", number: \"Three\" },\n    { suit: \"Wands\", number: \"Four\" }, { suit: \"Wands\", number: \"Five\" }, { suit: \"Wands\", number: \"Six\" },\n    { suit: \"Wands\", number: \"Seven\" }, { suit: \"Wands\", number: \"Eight\" }, { suit: \"Wands\", number: \"Nine\" },\n    { suit: \"Wands\", number: \"Ten\" }, { suit: \"Wands\", number: \"Page\" }, { suit: \"Wands\", number: \"Knight\" },\n    { suit: \"Wands\", number: \"Queen\" }, { suit: \"Wands\", number: \"King\" }, { suit: \"Cups\", number: \"Ace\" },\n    { suit: \"Cups\", number: \"Two\" }, { suit: \"Cups\", number: \"Three\" }, { suit: \"Cups\", number: \"Four\" },\n    { suit: \"Cups\", number: \"Five\" }, { suit: \"Cups\", number: \"Six\" }, { suit: \"Cups\", number: \"Seven\" },\n    { suit: \"Cups\", number: \"Eight\" }, { suit: \"Cups\", number: \"Nine\" }, { suit: \"Cups\", number: \"Ten\" },\n    { suit: \"Cups\", number: \"Page\" }, { suit: \"Cups\", number: \"Knight\" }, { suit: \"Cups\", number: \"Queen\" },\n    { suit: \"Cups\", number: \"King\" }, { suit: \"Swords\", number: \"Ace\" }, { suit: \"Swords\", number: \"Two\" },\n    { suit: \"Swords\", number: \"Three\" }, { suit: \"Swords\", number: \"Four\" }, { suit: \"Swords\", number: \"Five\" },\n    { suit: \"Swords\", number: \"Six\" }, { suit: \"Swords\", number: \"Seven\" }, { suit: \"Swords\", number: \"Eight\" },\n    { suit: \"Swords\", number: \"Nine\" }, { suit: \"Swords\", number: \"Ten\" }, { suit: \"Swords\", number: \"Page\" },\n    { suit: \"Swords\", number: \"Knight\" }, { suit: \"Swords\", number: \"Queen\" }, { suit: \"Swords\", number: \"King\" },\n    { suit: \"Pentacles\", number: \"Ace\" }, { suit: \"Pentacles\", number: \"Two\" }, { suit: \"Pentacles\", number: \"Three\" },\n    { suit: \"Pentacles\", number: \"Four\" }, { suit: \"Pentacles\", number: \"Five\" }, { suit: \"Pentacles\", number: \"Six\" },\n    { suit: \"Pentacles\", number: \"Seven\" }, { suit: \"Pentacles\", number: \"Eight\" }, { suit: \"Pentacles\", number: \"Nine\" },\n    { suit: \"Pentacles\", number: \"Ten\" }, { suit: \"Pentacles\", number: \"Page\" }, { suit: \"Pentacles\", number: \"Knight\" },\n    { suit: \"Pentacles\", number: \"Queen\" }, { suit: \"Pentacles\", number: \"King\" }\n  ];\n\n  if (cardNumber <= 22) {\n    return { name: majorArcana[cardNumber - 1].name, reversed: include_reversed && Math.random() < reversedProbability };\n  } else {\n    const suitIndex = Math.floor((cardNumber - 23) / 14);\n    const numberIndex = (cardNumber - 23) % 14;\n    const suit = [\"Wands\", \"Cups\", \"Swords\", \"Pentacles\"][suitIndex];\n    return {\n      name: `${minorArcana[numberIndex].number} of ${suit}`,\n      reversed: include_reversed && Math.random() < reversedProbability\n    };\n  }\n}\n\nasync function tarot_reading(params, userSettings) {\n  const { query, spread_type, spread_layout } = params;\n  const { include_reversed } = userSettings;\n\n  const numCards = spread_layout.length;\n  const shuffledDeck = getShuffledDeck();\n  const selectedCards = shuffledDeck\n    .slice(0, numCards)\n    .map(card => getCard(card.number, card.reversedProbability, include_reversed === \"Yes\"));\n\n  let reading = `**Tarot Reading for:** ${query}\\n\\n`;\n  reading += `**Spread:** ${spread_type}\\n\\n`;\n\n  for (let i = 0; i < numCards; i++) {\n    reading += `**${spread_layout[i]}:** ${selectedCards[i].name} ${selectedCards[i].reversed ? \"(Reversed)\" : \"\"}\\n\\n`;\n  }\n\n  const instructions = {\n    corePrinciples: [\n      { rule: \"QUERY_FOCUS\", description: \"Prioritize the user's query. All card interpretations must directly relate to and address this query.\" },\n      { rule: \"INTERCONNECTED_ANALYSIS\", description: \"Analyze relationships between cards. Consider their positions and mutual influence. Do not interpret cards in isolation.\" },\n      { rule: \"SYMBOLIC_DEPTH\", description: \"Interpret card symbolism beyond basic keywords. Explore traditional, archetypal, and psychological meanings.\" },\n      { rule: \"NARRATIVE_COHERENCE\", description: \"Create a logical flow, connecting interpretations into a unified narrative.\" },\n      { rule: \"EMPOWERMENT_GUIDANCE\", description: \"Focus on insights and guidance, not deterministic predictions. Empower the user to make informed decisions.\" },\n      { rule: \"EMPATHETIC_APPROACH\", description: \"Approach the reading with sensitivity and empathy. Acknowledge the user's potential vulnerability.\" },\n      { rule: \"PROBABILISTIC_LANGUAGE\", description: \"Use suggestive and conditional language. Avoid definitive or absolute statements.\" }\n    ],\n    cardInterpretationProcess: [\n      { action: \"IDENTIFY_CARD\", description: \"Output card name (string).\" },\n      { action: \"CORE_MEANING\", description: \"Briefly explain the card's fundamental meaning in relation to the query (string).\" },\n      { action: \"SYMBOLIC_ANALYSIS\", description: \"Analyze card symbolism.\", subActions: [\"Visual Elements: Analyze figures, objects, and settings (string).\", \"Color Associations: Interpret colors (string).\", \"Numerical Significance: Explain numerological meaning (string).\", \"Suit Interpretation (Minor Arcana): Describe how the suit modifies the card's meaning (string).\"] },\n      { action: \"REVERSED_CARD_NUANCES\", description: \"If card is reversed, explore how this alters its meaning.\", subActions: [\"Challenges and Blockages: Indicate obstacles or challenges (string).\", \"Internal Dynamics: Point to internal conflicts or blocks (string).\", \"Shadow Aspects: Represent the negative side of the card (string).\"] },\n      { action: \"POSITIONAL_RELEVANCE\", description: \"Explain how the card's meaning is shaped by its position within the spread.\", subActions: [\"Past Influences: Illuminate past events (string).\", \"Current Situation: Reveal present circumstances (string).\", \"Potential Future: Suggest potential outcomes (string).\", \"Obstacles and Challenges: Highlight hurdles (string).\", \"Guidance and Advice: Offer recommendations (string).\"] },\n      { action: \"INTER_CARD_DYNAMICS\", description: \"Analyze how the card interacts with other cards in the spread.\", subActions: [\"Reinforcing Patterns: Identify cards that amplify each other (string).\", \"Contradictory Messages: Identify cards that present conflicting perspectives (string).\", \"Meaning Modification: Explain how other cards modify the interpretation (string).\"] }\n    ],\n    spreadGuidance: {\n      \"Single Card\": { layout: [\"Current Situation/Advice\"], description: \"Focus on core message and relevance to the user's query.\" },\n      \"Three-Card\": { layout: [\"The Past\", \"The Present\", \"The Future\"], description: \"Analyze the interplay between past, present, and future influences.\" },\n      \"Three-Card (Situation, Action, Outcome)\": { layout: [\"Situation\", \"Action\", \"Outcome\"], description: \"Analyze a situation, the action to take, and the potential outcome.\" },\n      \"Three-Card (Mind, Body, Spirit)\": { layout: [\"Mind\", \"Body\", \"Spirit\"], description: \"Analyze the mental, physical, and spiritual aspects of a situation.\" },\n      \"Celtic Cross\": { layout: [\"The Present Situation\", \"The Challenge or Obstacle\", \"Past Influences\", \"Future Potential\", \"Conscious Goals\", \"Subconscious Influences\", \"Advice or Guidance\", \"External Influences\", \"Hopes and Fears\", \"Outcome\"], description: \"Provide detailed analysis of each position and their interactions.\" },\n      \"Horseshoe\": { layout: [\"Past Influences\", \"Present Circumstances\", \"Future Possibilities\", \"Obstacles\", \"External Influences\", \"What to Do\", \"Outcome\"], description: \"Provide a broader view of a situation, including past, present, and future aspects, as well as advice.\" },\n      \"Relationship\": { layout: [\"You\", \"Your Partner\", \"The Relationship\", \"Strengths\", \"Weaknesses\", \"Path Forward\"], description: \"Focus on dynamics, perspectives, and potential for growth.\" },\n      \"Career Path\": { layout: [\"Current Career Situation\", \"Strengths and Talents\", \"Challenges and Obstacles\", \"Hidden Potential\", \"Career Advice\", \"Long-Term Potential\"], description: \"Analyze current situation, talents, challenges, potential, advice, and long-term prospects.\" },\n      \"Blind Spot\": { layout: [\"Hidden Influences\"], description: \"Uncover hidden aspects of oneself or situations.\" }\n    },\n    outputPresentation: [\n      { action: \"ACCESSIBLE_LANGUAGE\", description: \"Use clear, concise language. Avoid jargon.\" },\n      { action: \"STRUCTURED_FORMAT\", description: \"Use headings, subheadings, and bullet points for readability.\" },\n      { action: \"INTEGRATED_SUMMARY\", description: \"Provide a concise summary of key insights, synthesizing the spread.\" },\n      { action: \"ACTION_ORIENTED_ADVICE\", description: \"Offer practical and actionable advice.\" },\n      { action: \"REFLECTIVE_CONCLUSION\", description: \"End with an open-ended conclusion, encouraging user reflection.\" }\n    ]\n  };\n\n  return {\n    reading: reading,\n    instructions: instructions\n  };\n}",
+    "uuid": "b41456d4-21f7-415e-842b-2b3b78cb1f9e",
+    "emoji": "🧩",
+    "title": "Tarot Reader",
+    "iconURL": "https://cdn-icons-png.flaticon.com/512/815/815946.png",
+    "openaiSpec": {
+        "name": "tarot_reading",
+        "parameters": {
+            "type": "object",
+            "required": [
+                "query",
+                "spread_type",
+                "spread_layout"
+            ],
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "The user's question or situation for the tarot reading."
+                },
+                "spread_type": {
+                    "enum": [
+                        "Single Card",
+                        "Three-Card",
+                        "Three-Card (Situation, Action, Outcome)",
+                        "Three-Card (Mind, Body, Spirit)",
+                        "Celtic Cross",
+                        "Horseshoe",
+                        "Relationship",
+                        "Career Path",
+                        "Blind Spot",
+                        "Zodiac"
+                    ],
+                    "type": "string",
+                    "description": "The type of tarot spread to use."
+                },
+                "spread_layout": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The layout of the chosen spread, defining the meaning of each card position."
+                }
+            }
+        },
+        "description": "Provides a tarot reading based on the user's query, selecting an appropriate spread and interpreting the cards."
+    },
+    "outputType": "respond_to_ai",
+    "oauthConfig": null,
+    "userSettings": [
+        {
+            "name": "include_reversed",
+            "type": "enum",
+            "label": "Include Reversed Cards",
+            "values": [
+                "Yes",
+                "No"
+            ],
+            "description": "Whether to consider reversed card meanings in the reading.",
+            "defaultValue": "Yes"
+        }
+    ],
+    "overviewMarkdown": "🔮 Your AI-powered personal tarot card reader.\n",
+    "authenticationType": "AUTH_TYPE_NONE",
+    "implementationType": "javascript",
+    "dynamicContextEndpoints": []
+}
