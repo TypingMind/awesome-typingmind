@@ -35,14 +35,19 @@ List of cool [TypingMind plugins](https://docs.typingmind.com/plugins).
   - Enhanced Reasoning Tool, Vectara Query Plugin. Discord Message Sender, CSV Generator With Download, Fal Video Generator
 - [Memory Plugin](https://www.memoryplugin.com/) - premium
 - [Jina Web Reader](https://github.com/jdblack/typingmind_jina_web_reader) - Uses the Jina.AI page rearder to fetch web pages for the LLM
-- [Plugins shared on TypingMind Discord](https://discord.com/channels/1087527241505853520/1120236521732182056) or [showcase](https://discord.com/channels/1087527241505853520/1140505087148568576) - free
-  - [Document Generator](https://cloud.typingmind.com/plugins/p-01JC4MFPZ80KPJ2G0VDQ7Y1SND) - by khoit12
+- [Plugins shared on TypingMind Discord](https://discord.com/channels/1087527241505853520/1120236521732182056) or [Showcase](https://discord.com/channels/1087527241505853520/1140505087148568576) - free
+  - [Document Generator](https://cloud.typingmind.com/plugins/p-01JC4MFPZ80KPJ2G0VDQ7Y1SND) ([Discord](https://discord.com/channels/1087527241505853520/1140505087148568576/threads/1304251170034024579)) - by khoit12
   - [Todoist Integration](https://cloud.typingmind.com/plugins/p-01JC4TCVZYNTY6BB39XBKY8JTC) - by occred
-  - [Perplexity Search](https://cloud.typingmind.com/plugins/p-01JC9HXPV708RY6B68RY6CAWW1) - by khoit12
-  - [Get Weather](https://cloud.typingmind.com/plugins/p-01JBYQ5W1WHD7GSRHZK9KC4JTW) - by khoit12
-  - [WolframAlpha Query](https://cloud.typingmind.com/plugins/p-01JBZQ6VTK3XNV65DXGKYYFXJ9) - by occred
-  - [Obsidian Omnisearch Integration](https://cloud.typingmind.com/plugins/p-01JBQCW0G2VQSFJN5FB08F4FHA) - by occred
-  - [Presentation Generator](https://cloud.typingmind.com/plugins/p-01JCBPXPFC2KN4WC9W8JTG1J97) - by khoit12
-  - [Open Library Book Search](https://cloud.typingmind.com/plugins/p-01JBP40A4J7ZBZPFYZT17B0WY1) - by khoit12
+  - [Perplexity Search](https://cloud.typingmind.com/plugins/p-01JC9HXPV708RY6B68RY6CAWW1) ([Discord](https://discord.com/channels/1087527241505853520/1140505087148568576/threads/1300646475902222359)) - by khoit12
+  - [Get Weather](https://cloud.typingmind.com/plugins/p-01JBYQ5W1WHD7GSRHZK9KC4JTW) ([Discord](https://discord.com/channels/1087527241505853520/1140505087148568576/threads/1300941341764747426)) - by khoit12
+  - [WolframAlpha Query](https://cloud.typingmind.com/plugins/p-01JBZQ6VTK3XNV65DXGKYYFXJ9) ([Discord](https://discord.com/channels/1087527241505853520/1140505087148568576/threads/1303558264365125672)) - by occred
+  - [Obsidian Omnisearch Integration](https://cloud.typingmind.com/plugins/p-01JBQCW0G2VQSFJN5FB08F4FHA) ([Discord](https://discord.com/channels/1087527241505853520/1140505087148568576/threads/1302387458352091308)) - by occred
+  - [Presentation Generator](https://cloud.typingmind.com/plugins/p-01JCBPXPFC2KN4WC9W8JTG1J97) ([Discord](https://discord.com/channels/1087527241505853520/1140505087148568576/threads/1305244812982620201)) - by khoit12
+  - [Powerpoint Generator v2](https://cloud.typingmind.com/plugins/p-01JFNRMF0J4GRZAN130BZQBE1T) ([Discord](https://discord.com/channels/1087527241505853520/1140505087148568576/threads/1319464238590464091)) - by khoit12
+  - [Open Library Book Search](https://cloud.typingmind.com/plugins/p-01JBP40A4J7ZBZPFYZT17B0WY1) ([Discord](https://discord.com/channels/1087527241505853520/1140505087148568576/threads/1302015954707939399)) - by khoit12
   - [Grok Image Generation](https://cloud.typingmind.com/plugins/p-01JD02YSJ4RMYSMY2X2JRC21TN) - by mcarcaso
+  - [Critique Search](https://cloud.typingmind.com/plugins/p-01JEZEHRCA8RGEXKHWR1H5GD4W) ([Discord](https://discord.com/channels/1087527241505853520/1140505087148568576/threads/1316933644060725258)) - by murat.g
+  - [Tarot Reader](https://cloud.typingmind.com/plugins/p-01JEZNQ0G2QAKSQ19TE0QXPE1P) ([Discord](https://discord.com/channels/1087527241505853520/1140505087148568576/threads/1317061462375534624)) - by khoit12
+  - [Yi Jing Reader](https://cloud.typingmind.com/plugins/p-01JF6JKT0F22W9WMCPPH3NXW4G) ([Discord](https://discord.com/channels/1087527241505853520/1140505087148568576/threads/1317951683065548931)) - by khoit12
+  - [Pincone Query](https://cloud.typingmind.com/plugins/p-01JGQ4928PFXRAVTW2WXZJCX11) ([Discord](https://discord.com/channels/1087527241505853520/1140505087148568576/threads/1302015954707939399)) - by khoit12
   
