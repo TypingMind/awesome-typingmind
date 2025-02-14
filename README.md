@@ -43,6 +43,8 @@ List of cool [TypingMind plugins](https://docs.typingmind.com/plugins).
   - Enhanced Reasoning Tool, Vectara Query Plugin. Discord Message Sender, CSV Generator With Download, Fal Video Generator
 - [Memory Plugin](https://www.memoryplugin.com/) - premium
 - [Jina Web Reader](https://github.com/jdblack/typingmind_jina_web_reader) - Uses the Jina.AI page rearder to fetch web pages for the LLM
+- [Perplexity search with OpenRouter API](https://github.com/serajoddin-aliabadi/plugin-perplexity-search-openrouter) - This plugin allows the AI assistant to search for information from the internet using Perplexity with OpenRouter API.
+
 - Other free plugins
   - [Book Search](https://cloud.typingmind.com/plugins/p-01JKR32GXQCRHWJ4S98P349X6D) - by khoit12
   - [Critique Search](https://cloud.typingmind.com/plugins/p-01JKR3K0FM6RV47ETRZH335G9W) - by khoit12
@@ -70,4 +72,5 @@ List of cool [TypingMind plugins](https://docs.typingmind.com/plugins).
   - [Todoist Integration](https://cloud.typingmind.com/plugins/p-01JC4TCVZYNTY6BB39XBKY8JTC) - by occred
   - [WolframAlpha Query](https://cloud.typingmind.com/plugins/p-01JBZQ6VTK3XNV65DXGKYYFXJ9) - by occred
   - [Yijing Reader](https://cloud.typingmind.com/plugins/p-01JKR38SJK3JH8MPTJYJSMDXJS) - by khoit12
+
 - khoit12's Plugin server: [https://github.com/Btran1291/TypingMind-Plugin-Server](https://github.com/Btran1291/TypingMind-Plugin-Server)
