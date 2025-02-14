@@ -43,22 +43,38 @@ List of cool [TypingMind plugins](https://docs.typingmind.com/plugins).
   - Enhanced Reasoning Tool, Vectara Query Plugin. Discord Message Sender, CSV Generator With Download, Fal Video Generator
 - [Memory Plugin](https://www.memoryplugin.com/) - premium
 - [Jina Web Reader](https://github.com/jdblack/typingmind_jina_web_reader) - Uses the Jina.AI page rearder to fetch web pages for the LLM
-- [Plugins shared on TypingMind Discord](https://discord.com/channels/1087527241505853520/1120236521732182056) or [Showcase](https://discord.com/channels/1087527241505853520/1140505087148568576) - free
-  - [Document Generator](https://cloud.typingmind.com/plugins/p-01JC4MFPZ80KPJ2G0VDQ7Y1SND) ([Discord](https://discord.com/channels/1087527241505853520/1140505087148568576/threads/1304251170034024579)) - by khoit12
+- [Perplexity search with OpenRouter API](https://github.com/serajoddin-aliabadi/plugin-perplexity-search-openrouter) - This plugin allows the AI assistant to search for information from the internet using Perplexity with OpenRouter API.
+
+- Other free plugins
+  - [Book Search](https://cloud.typingmind.com/plugins/p-01JKR32GXQCRHWJ4S98P349X6D) - by khoit12
+  - [Critique Search](https://cloud.typingmind.com/plugins/p-01JKR3K0FM6RV47ETRZH335G9W) - by khoit12
+  - [Enhanced Image Search](https://cloud.typingmind.com/plugins/p-01JKR2NS3AT0M3733GDDZTAMH9) - by khoit12
+  - [Enhanced Web Search](https://cloud.typingmind.com/plugins/p-01JKR2XHDSRR0MAVFVKWAN4QKJ) - by khoit12
+  - [FLUX 1 [Schnell]](https://cloud.typingmind.com/plugins/p-01JKR3QPYJ3RYWDZKCA018S9K8) - by khoit12
+  - [Get Weather](https://cloud.typingmind.com/plugins/p-01JKR3GBJWPA0KKNARC4ZTEHT8) - by khoit12
+  - [Grounding with google](https://cloud.typingmind.com/plugins/p-01JKR2GHTBN7H8XBX781FCTE63) - by khoit12
+  - [Hunyuan](https://cloud.typingmind.com/plugins/p-01JKR2E5F2WS5GQFQ08YV58T19) - by khoit12
+  - [Imagen 3](https://cloud.typingmind.com/plugins/p-01JKR2CJ6ZN6703B36X7TJH3HB) - by khoit12
+  - [Jina Grounding](https://cloud.typingmind.com/plugins/p-01JKR3PQ20MWG7F17JT63TJHKR) - by khoit12
+  - [Jina Web Reader](https://cloud.typingmind.com/plugins/p-01JKR2J6CWWTTPZHA1862MX6BR) - by khoit12
+  - [Jina Web Search](https://cloud.typingmind.com/plugins/p-01JKR39KZT25HSYXMXDHK55YHV) - by khoit12
+  - [Mind Map Maker](https://cloud.typingmind.com/plugins/p-01JKR2RE3AEMFMEX474RGBTMBG) - by khoit12
+  - [Obsidian Omnisearch Integration](https://cloud.typingmind.com/plugins/p-01JBQCW0G2VQSFJN5FB08F4FHA) - by occred
+  - [Pinecone Query](https://cloud.typingmind.com/plugins/p-01JKR3MWW004HAYS07N3NYFEHN) - by khoit12
+  - [Render Highcharts](https://cloud.typingmind.com/plugins/p-01JKR2WHKDV0PVZJVENPPCNVNN) - by khoit12
+  - [Render Plotly](https://cloud.typingmind.com/plugins/p-01JKR2Z3DFR166AV81P210TA01) - by khoit12
+  - [Render Vis Graph](https://cloud.typingmind.com/plugins/p-01JKR37B6HCXF83P6ASK60W7TN) - by khoit12
+  - [Render Viz Graph](https://cloud.typingmind.com/plugins/p-01JKR2SXDZR5NH6F3D40DK07SE) - by khoit12
+  - [Stock Lookup](https://cloud.typingmind.com/plugins/p-01JKR2Q2268YFA5J5YKENSGQ4G) - by khoit12
+  - [Tarot reader](https://cloud.typingmind.com/plugins/p-01JKR2DV5QMXHHEPQXKHSP7Z3W) - by khoit12
+  - [Tavily extract](https://cloud.typingmind.com/plugins/p-01JKR3BWRS2RJKG4Q4CQCPD5V0) - by khoit12
+  - [Tavily Search](https://cloud.typingmind.com/plugins/p-01JKR3AF5YA55HJVN46KPP2YJN) - by khoit12
   - [Todoist Integration](https://cloud.typingmind.com/plugins/p-01JC4TCVZYNTY6BB39XBKY8JTC) - by occred
-  - [Perplexity Search](https://cloud.typingmind.com/plugins/p-01JC9HXPV708RY6B68RY6CAWW1) ([Discord](https://discord.com/channels/1087527241505853520/1140505087148568576/threads/1300646475902222359)) - by khoit12
-  - [Get Weather](https://cloud.typingmind.com/plugins/p-01JBYQ5W1WHD7GSRHZK9KC4JTW) ([Discord](https://discord.com/channels/1087527241505853520/1140505087148568576/threads/1300941341764747426)) - by khoit12
-  - [WolframAlpha Query](https://cloud.typingmind.com/plugins/p-01JBZQ6VTK3XNV65DXGKYYFXJ9) ([Discord](https://discord.com/channels/1087527241505853520/1140505087148568576/threads/1303558264365125672)) - by occred
-  - [Obsidian Omnisearch Integration](https://cloud.typingmind.com/plugins/p-01JBQCW0G2VQSFJN5FB08F4FHA) ([Discord](https://discord.com/channels/1087527241505853520/1140505087148568576/threads/1302387458352091308)) - by occred
-  - [Presentation Generator](https://cloud.typingmind.com/plugins/p-01JCBPXPFC2KN4WC9W8JTG1J97) ([Discord](https://discord.com/channels/1087527241505853520/1140505087148568576/threads/1305244812982620201)) - by khoit12
-  - [Powerpoint Generator v2](https://cloud.typingmind.com/plugins/p-01JFNRMF0J4GRZAN130BZQBE1T) ([Discord](https://discord.com/channels/1087527241505853520/1140505087148568576/threads/1319464238590464091)) - by khoit12
-  - [Open Library Book Search](https://cloud.typingmind.com/plugins/p-01JBP40A4J7ZBZPFYZT17B0WY1) ([Discord](https://discord.com/channels/1087527241505853520/1140505087148568576/threads/1302015954707939399)) - by khoit12
   - [Grok Image Generation](https://cloud.typingmind.com/plugins/p-01JD02YSJ4RMYSMY2X2JRC21TN) - by mcarcaso
-  - [Critique Search](https://cloud.typingmind.com/plugins/p-01JEZEHRCA8RGEXKHWR1H5GD4W) ([Discord](https://discord.com/channels/1087527241505853520/1140505087148568576/threads/1316933644060725258)) - by murat.g
-  - [Tarot Reader](https://cloud.typingmind.com/plugins/p-01JEZNQ0G2QAKSQ19TE0QXPE1P) ([Discord](https://discord.com/channels/1087527241505853520/1140505087148568576/threads/1317061462375534624)) - by khoit12
-  - [Yi Jing Reader](https://cloud.typingmind.com/plugins/p-01JF6JKT0F22W9WMCPPH3NXW4G) ([Discord](https://discord.com/channels/1087527241505853520/1140505087148568576/threads/1317951683065548931)) - by khoit12
-  - [Pincone Query](https://cloud.typingmind.com/plugins/p-01JGQ4928PFXRAVTW2WXZJCX11) ([Discord](https://discord.com/channels/1087527241505853520/1140505087148568576/threads/1302015954707939399)) - by khoit12
-- [Python Interperter with packages](https://github.com/benhaotang/typingmind-python-with-package) - by Benhao Tang, execute python code with extra packages (numpy, scipy, etc.)
-- [Matplotlib Plot](https://github.com/benhaotang/typingmind-matplotlib) - by Benhao Tang, display interactive matplotlib plots with python code generated by llms
-- [Feynman Diagram](https://github.com/benhaotang/typingmind-feynmf) - by Benhao Tang, let llm use feynman.js to help you understand quantum field theory
-  
+  - [Python Interperter with packages](https://github.com/benhaotang/typingmind-python-with-package) - by Benhao Tang, execute python code with extra packages (numpy, scipy, etc.)
+  - [Matplotlib Plot](https://github.com/benhaotang/typingmind-matplotlib) - by Benhao Tang, display interactive matplotlib plots with python code generated by llms
+  - [Feynman Diagram](https://github.com/benhaotang/typingmind-feynmf) - by Benhao Tang, let llm use feynman.js to help you understand quantum field theory
+  - [WolframAlpha Query](https://cloud.typingmind.com/plugins/p-01JBZQ6VTK3XNV65DXGKYYFXJ9) - by occred
+  - [Yijing Reader](https://cloud.typingmind.com/plugins/p-01JKR38SJK3JH8MPTJYJSMDXJS) - by khoit12
+
+- khoit12's Plugin server: [https://github.com/Btran1291/TypingMind-Plugin-Server](https://github.com/Btran1291/TypingMind-Plugin-Server)
