@@ -9,7 +9,7 @@ A collection of useful resources for TypingMind
 List of open-source [TypingMind extensions](https://docs.typingmind.com/typing-mind-extensions).
 
 > [!WARNING]
-> **Warning:** Extensions have full access to the application and can read and modify any data within TypingMind. Please review the code carefully before installing a new extension, or only install extensions from sources you trust.
+> Extensions have full access to the application and can read and modify any data within TypingMind. Please review the code carefully before installing a new extension, or only install extensions from sources you trust.
 
 - [Add model search & show model full name](https://gist.github.com/trungdq88/0fae23af49e1c8fb43b36b78f2c5cdcf) - by kenharris
 - [Backup & sync data to AWS S3](https://github.com/itcon-pty-au/typingmind-cloud-backup) - by itcon-pty-au
@@ -20,7 +20,7 @@ List of open-source [TypingMind extensions](https://docs.typingmind.com/typing-m
 List of cool [TypingMind plugins](https://docs.typingmind.com/plugins).
 
 > [!TIP]
-> **Tip:** You are encouraged to host your plugins using a GitHub repository. All TypingMind's built-in plugins are open-source and maintained in their own separate repos at https://github.com/orgs/TypingMind/repositories.
+> You are encouraged to host your plugins using a GitHub repository. All TypingMind's built-in plugins are open-source and maintained in their own separate repos at https://github.com/orgs/TypingMind/repositories.
 >
 > Creating a repo for your plugin will make it easier to upgrade your plugin without creating a unique cloud share every time. Users can also import your plugins using the GitHub link directly.
 >
