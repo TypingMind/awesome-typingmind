@@ -16,6 +16,7 @@ List of open-source [TypingMind extensions](https://docs.typingmind.com/typing-m
 - [🛡 Content Shield](https://github.com/itcon-pty-au/typingmind-contentshield) - by itcon-pty-au
 - [Export chats to markdown in a zip file](https://gist.github.com/lzilioli/a8298c8622a69768cec9f872c6bb128c) - by idealparadox
 - [Automatically expose MCP tools as plugins](https://github.com/iamjackg/typingmind-mcp-extension) - by iamjackg
+- [💬 Include chat selection to message as 'quote'](https://github.com/brzvsk/typingmind-extension-quote) - by brzvsk
 
 ## Plugins
 
