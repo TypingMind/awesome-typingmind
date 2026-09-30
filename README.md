@@ -78,6 +78,7 @@ List of cool [TypingMind plugins](https://docs.typingmind.com/plugins).
   - [Render Viz Graph](https://github.com/Btran1291/TMPlugin-RenderViz) - by Ben Tran
   - [Research Badger](https://github.com/wimpysworld/plugin-research-badger) - by Martin Wimpress, relentlessly dig through online sources using Jina AI for web search and content extraction
   - [Stock Lookup](https://cloud.typingmind.com/plugins/p-01JKR2Q2268YFA5J5YKENSGQ4G) - by Ben Tran
+  - [TableJourney Food Search](https://github.com/lewismvaughan/tablejourney-mcp/tree/main/typingmind) - by lewismvaughan. Search verified restaurants, cafes and street food across 214 cities, no API key required.
   - [Tarot reader](https://cloud.typingmind.com/plugins/p-01JKR2DV5QMXHHEPQXKHSP7Z3W) - by Ben Tran
   - [Tavily extract](https://cloud.typingmind.com/plugins/p-01JKR3BWRS2RJKG4Q4CQCPD5V0) - by Ben Tran
   - [Tavily Search](https://cloud.typingmind.com/plugins/p-01JKR3AF5YA55HJVN46KPP2YJN) - by Ben Tran
