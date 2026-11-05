@@ -22,6 +22,7 @@ List of open-source [TypingMind extensions](https://docs.typingmind.com/typing-m
 ## Tools & Utilities
 
 - [ChatGPT2TypingMind](https://github.com/K2daOz/chatgpt2typingmind) - by workbench digital. Migrate all ChatGPT chats, projects & images to TypingMind with a Windows GUI app. Auto-detects projects & Custom GPTs, creates nested folder hierarchies, and hosts images via Cloudflare R2 (free). Supports incremental delta-sync.
+- [Sprouts Data MCP](https://dashboard.sproutsdata.ai/docs) - by Sprouts Data. Hosted MCP server with B2B company and people data. Add `https://dashboard.sproutsdata.ai/mcp` as a custom connector with your API key in the `X-API-Key` header, then search about 45.7M companies and 204M people in plain English, find look-alike companies and look up records. Test keys cost zero credits.
 
 ## Plugins
 
